@@ -5,8 +5,6 @@ package leetcode.editor.en.p1480_running_sum_of_1d_array;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] runningSum(int[] nums) {
-        int[] result = {1, 3};
-
         return new int[]{1, 3};
     }
 }

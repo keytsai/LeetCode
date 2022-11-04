@@ -7,10 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class SolutionTest {
     @Test
     void given_1_2_then_should_return_1_3() {
-        int[] input = {1, 2};
-        var result = new Solution().runningSum(input);
-        int[] expect = {1, 3};
+        var result = new Solution().runningSum(new int[]{1, 2});
 
+        int[] expect = {1, 3};
         assertEquals(expect[0], result[0]);
         assertEquals(expect[1], result[1]);
     }
