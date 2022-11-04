@@ -13,4 +13,13 @@ class SolutionTest {
         assertEquals(expect[0], result[0]);
         assertEquals(expect[1], result[1]);
     }
+
+    @Test
+    void given_2_3_then_should_return_2_5() {
+        var result = new Solution().runningSum(new int[]{2, 3});
+
+        int[] expect = {2, 5};
+        assertEquals(expect[0], result[0]);
+        assertEquals(expect[1], result[1]);
+    }
 }
