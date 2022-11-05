@@ -15,7 +15,7 @@ class Solution {
                 j--;
             }
             int k = i;
-            while (k < nums.length -1) {
+            while (k < nums.length - 1) {
                 endSum += nums[k + 1];
                 k++;
             }

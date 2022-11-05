@@ -22,4 +22,10 @@ class SolutionTest {
         var result = new Solution().pivotIndex(new int[]{1, 2, 3});
         assertEquals(-1, result);
     }
+
+    @Test
+    void given_2_1_minus_1_then_return_0() {
+        var result = new Solution().pivotIndex(new int[]{2, 1, -1});
+        assertEquals(0, result);
+    }
 }
