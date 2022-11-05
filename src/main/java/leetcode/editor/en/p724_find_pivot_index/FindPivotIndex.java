@@ -5,7 +5,7 @@ package leetcode.editor.en.p724_find_pivot_index;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int pivotIndex(int[] nums) {
-        int result = 0;
+        int result = -1;
         for (int i = 0; i < nums.length; i++) {
             int j = i;
             int beginSum = 0;
@@ -20,7 +20,7 @@ class Solution {
                 k++;
             }
             if (beginSum == endSum) {
-                result = i;
+                return i;
             }
         }
         return result;

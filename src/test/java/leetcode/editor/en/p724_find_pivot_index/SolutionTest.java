@@ -16,4 +16,10 @@ class SolutionTest {
         var result = new Solution().pivotIndex(new int[]{1, 7, 3, 6, 5, 6});
         assertEquals(3, result);
     }
+
+    @Test
+    void given_1_2_3_then_return_minus_1() {
+        var result = new Solution().pivotIndex(new int[]{1, 2, 3});
+        assertEquals(-1, result);
+    }
 }
