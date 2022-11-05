@@ -8,7 +8,12 @@ class SolutionTest {
     @Test
     void given_1_2_1_then_return_3() {
         var result = new Solution().pivotIndex(new int[]{1, 2, 1});
-
         assertEquals(1, result);
+    }
+
+    @Test
+    void given_1_7_3_6_5_6_then_return_3() {
+        var result = new Solution().pivotIndex(new int[]{1, 7, 3, 6, 5, 6});
+        assertEquals(3, result);
     }
 }

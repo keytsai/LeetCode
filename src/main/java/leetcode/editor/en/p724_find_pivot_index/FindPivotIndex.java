@@ -11,12 +11,12 @@ class Solution {
             int beginSum = 0;
             int endSum = 0;
             while (j > 0) {
-                beginSum += nums[i - 1];
+                beginSum += nums[j - 1];
                 j--;
             }
             int k = i;
             while (k < nums.length -1) {
-                endSum += nums[i + 1];
+                endSum += nums[k + 1];
                 k++;
             }
             if (beginSum == endSum) {
