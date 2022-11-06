@@ -23,4 +23,10 @@ class SolutionTest {
         var result = new Solution().isIsomorphic("paper", "title");
         assertTrue(result);
     }
+
+    @Test
+    void given_abcdefghijklmnopqrstuvwxyzva_abcdefghijklmnopqrstuvwxyzck_then_should_return_false() {
+        var result = new Solution().isIsomorphic("abcdefghijklmnopqrstuvwxyzva", "abcdefghijklmnopqrstuvwxyzck");
+        assertFalse(result);
+    }
 }

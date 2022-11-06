@@ -14,11 +14,11 @@ class Solution {
         StringBuilder b = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             map1.putIfAbsent(s.charAt(i), Integer.toString(i));
-            a.append(map1.get(s.charAt(i)));
+            a.append(map1.get(s.charAt(i))).append(map1.get(s.charAt(i)));
         }
         for (int i = 0; i < s.length(); i++) {
             map2.putIfAbsent(t.charAt(i), Integer.toString(i));
-            b.append(map2.get(t.charAt(i)));
+            b.append(map2.get(t.charAt(i))).append(map2.get(t.charAt(i)));
         }
         return a.compareTo(b) == 0;
     }
