@@ -24,4 +24,10 @@ class SolutionTest {
         var result = solution.isSubsequence("axc", "ahbgdc");
         assertFalse(result);
     }
+
+    @Test
+    void given_abc_ahbgdc_then_should_return_true() {
+        var result = solution.isSubsequence("abc", "ahbgdc");
+        assertTrue(result);
+    }
 }

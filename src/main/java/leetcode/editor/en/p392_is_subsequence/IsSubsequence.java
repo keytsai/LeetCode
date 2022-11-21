@@ -7,18 +7,13 @@ class Solution {
     public boolean isSubsequence(String s, String t) {
         int sCount = 0;
         int tCount = 0;
-        for (var sNumber : s.getBytes()) {
-            for (var tNumber : t.getBytes()) {
-                if (sNumber == tNumber) {
-                    break;
-                }
-                tCount++;
+        while (sCount < s.getBytes().length && tCount < t.getBytes().length) {
+            if (s.getBytes()[sCount] == t.getBytes()[tCount]) {
+                sCount++;
             }
-            sCount++;
+            tCount++;
         }
-
-
-        return sCount >= tCount;
+        return sCount == s.getBytes().length;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
