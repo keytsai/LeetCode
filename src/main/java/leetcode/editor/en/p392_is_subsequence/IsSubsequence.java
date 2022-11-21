@@ -5,15 +5,14 @@ package leetcode.editor.en.p392_is_subsequence;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        int sCount = 0;
-        int tCount = 0;
-        while (sCount < s.getBytes().length && tCount < t.getBytes().length) {
-            if (s.getBytes()[sCount] == t.getBytes()[tCount]) {
-                sCount++;
+        int i = 0, j = 0;
+        while (i < s.length() && j < t.length()) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++;
             }
-            tCount++;
+            j++;
         }
-        return sCount == s.getBytes().length;
+        return i == s.length();
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
