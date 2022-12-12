@@ -2,7 +2,6 @@ package leetcode.editor.en.p226_invert_binary_tree;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import leetcode.editor.en.utils.TreeNode;
 
 import static org.junit.jupiter.api.Assertions.*;
 
