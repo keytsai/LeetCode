@@ -6,5 +6,5 @@
 | 2   | 724. Find Pivot Index         | Easy       | `Array` `Prefix Sum`                                             | 
 | 3   | 205. Isomorphic Strings       | Easy       | `Hash Table` `String`                                            | 
 | 4   | 392. Is Subsequence           | Easy       | `Two Pointers` `Dynamic Programming` `String`                    |
-| 5   | P226_InvertBinaryTree         | Easy       | `Tree` `Depth-First Search` `Breadth-First Search` `Binary Tree` |
+| 5   | 226. Invert Binary Tree       | Easy       | `Tree` `Depth-First Search` `Breadth-First Search` `Binary Tree` |
 
