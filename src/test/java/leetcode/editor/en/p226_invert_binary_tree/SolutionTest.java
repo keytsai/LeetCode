@@ -34,7 +34,6 @@ class SolutionTest {
         var result = solution.invertTree(null);
 
         assertNull(result);
-        System.out.println(result);
     }
 
     @Test
@@ -46,6 +45,17 @@ class SolutionTest {
         var result = solution.invertTree(root);
 
         assertEquals(new TreeNode(1), result);
+    }
+
+    @Test
+    void given_2_node() {
+        // Input: root = [1]
+        // Output: []
+        root = new TreeNode(1, new TreeNode(2), null);
+
+        var result = solution.invertTree(root);
+
+        assertEquals(new TreeNode(1, null, new TreeNode(2)), result);
     }
 
     @Test

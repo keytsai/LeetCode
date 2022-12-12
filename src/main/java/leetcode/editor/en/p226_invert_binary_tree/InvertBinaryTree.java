@@ -43,8 +43,12 @@ class Solution {
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
             return null;
-        } else if (root.left == null) {
+        } else if (root.left == null && root.right == null) {
             return root;
+        } else if (root.left == null) {
+            return new TreeNode(root.val, root.right, null);
+        } else if (root.right == null) {
+            return new TreeNode(root.val, null, root.left);
         }
         return invertOneTree(root);
     }
