@@ -31,12 +31,21 @@ class SolutionTest {
     void given_no_node() {
         // Input: root = []
         // Output: []
-        root = new TreeNode();
+        var result = solution.invertTree(null);
+
+        assertNull(result);
+        System.out.println(result);
+    }
+
+    @Test
+    void given_1_node() {
+        // Input: root = [1]
+        // Output: []
+        root = new TreeNode(1);
 
         var result = solution.invertTree(root);
-        var expect = new TreeNode();
 
-        assertEquals(expect, result);
+        assertEquals(new TreeNode(1), result);
     }
 
     @Test

@@ -41,8 +41,10 @@ class TreeNode {
 
 class Solution {
     public TreeNode invertTree(TreeNode root) {
-        if (root.equals(new TreeNode())) {
-            return new TreeNode();
+        if (root == null) {
+            return null;
+        } else if (root.left == null) {
+            return root;
         }
         return invertOneTree(root);
     }
