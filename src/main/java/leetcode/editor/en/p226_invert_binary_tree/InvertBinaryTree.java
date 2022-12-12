@@ -26,9 +26,21 @@ class Solution {
         if (root.equals(new TreeNode())) {
             return new TreeNode();
         }
-        var rootLeft = root.getLeft();
-        var rootRight = root.getRight();
-        return new TreeNode(root.getVal(), new TreeNode(rootRight.getVal()), new TreeNode(rootLeft.getVal()));
+        return invertOneTree(root);
+    }
+
+    public TreeNode invertOneTree(TreeNode root) {
+        var leftNode = root.getLeft();
+        var rightNode = root.getRight();
+        if (leftNode.getLeft() == null) {
+            return new TreeNode(root.getVal(), new TreeNode(rightNode.getVal()), new TreeNode(leftNode.getVal()));
+        } else {
+            return new TreeNode(root.getVal(), invertOneTree(rightNode), invertOneTree(leftNode));
+        }
+    }
+
+    public boolean hasNode(TreeNode treeNode) {
+        return treeNode.getLeft().getLeft() != null;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
