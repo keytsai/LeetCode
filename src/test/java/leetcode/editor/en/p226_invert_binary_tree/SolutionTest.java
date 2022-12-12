@@ -27,4 +27,16 @@ class SolutionTest {
 
         assertEquals(expect, result);
     }
+
+    @Test
+    void given_no_node() {
+        // Input: root = []
+        // Output: []
+        root = new TreeNode();
+
+        var result = solution.invertTree(root);
+        var expect = new TreeNode();
+
+        assertEquals(expect, result);
+    }
 }

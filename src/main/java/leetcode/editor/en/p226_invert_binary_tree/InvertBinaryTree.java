@@ -23,6 +23,9 @@ import leetcode.editor.en.utils.TreeNode;
  */
 class Solution {
     public TreeNode invertTree(TreeNode root) {
+        if (root.equals(new TreeNode())) {
+            return new TreeNode();
+        }
         var rootLeft = root.getLeft();
         var rootRight = root.getRight();
         return new TreeNode(root.getVal(), new TreeNode(rootRight.getVal()), new TreeNode(rootLeft.getVal()));
