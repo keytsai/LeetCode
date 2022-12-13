@@ -50,4 +50,15 @@ class SolutionTest {
         // Output: 0
         assertEquals(0, solution.maxDepth(null));
     }
+
+    @Test
+    void threeLevel2() {
+        // Input: root = [1,2,3,4,5]
+        // Output: 3
+        TreeNode leftNode = new TreeNode(2, new TreeNode(4), new TreeNode(5));
+        TreeNode rightNode = new TreeNode(3);
+        TreeNode root = new TreeNode(1, leftNode, rightNode);
+
+        assertEquals(3, solution.maxDepth(root));
+    }
 }
