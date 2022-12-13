@@ -23,4 +23,13 @@ class SolutionTest {
 
         assertEquals(2, solution.maxDepth(treeNode));
     }
+
+    @Test
+    void twoLevel2() {
+        // Input: root = [1,2,null]
+        // Output: 2
+        TreeNode treeNode = new TreeNode(1, new TreeNode(2), null);
+
+        assertEquals(2, solution.maxDepth(treeNode));
+    }
 }

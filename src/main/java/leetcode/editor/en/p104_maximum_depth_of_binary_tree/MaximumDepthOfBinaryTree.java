@@ -27,6 +27,9 @@ class Solution {
         if (root.right != null) {
             level++;
             maxDepth(root.right);
+        } else if (root.left != null) {
+            level++;
+            maxDepth(root.left);
         }
         return level;
     }
