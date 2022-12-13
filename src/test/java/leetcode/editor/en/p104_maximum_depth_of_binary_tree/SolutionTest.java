@@ -43,4 +43,11 @@ class SolutionTest {
 
         assertEquals(3, solution.maxDepth(root));
     }
+
+    @Test
+    void zeroLevel() {
+        // Input: root = []
+        // Output: 0
+        assertEquals(0, solution.maxDepth(null));
+    }
 }
