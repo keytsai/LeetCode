@@ -22,8 +22,8 @@ import leetcode.editor.en.utils.TreeNode;
  * }
  */
 class Solution {
+    int level = 1;
     public int maxDepth(TreeNode root) {
-        int level = 1;
         if (root.right != null) {
             level++;
             maxDepth(root.right);
