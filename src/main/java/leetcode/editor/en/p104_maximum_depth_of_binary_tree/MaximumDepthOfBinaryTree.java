@@ -22,28 +22,41 @@ import leetcode.editor.en.utils.TreeNode;
  * }
  */
 class Solution {
-    int levelA = 1;
-    int levelB = 1;
+    int level = 1;
+    int rightLevel = 1;
+    int leftLevel = 1;
     public int maxDepth(TreeNode root) {
+        int a = right(root);
+        int b = left(root);
+        return Math.max(a, b);
+    }
+
+    public int right(TreeNode root) {
         if (root == null) {
             return 0;
         }
         if (root.right != null) {
-            levelA++;
-            maxDepth(root.right);
+            rightLevel++;
+            right(root.right);
         } else if (root.left != null) {
-            levelA++;
-            maxDepth(root.left);
+            rightLevel++;
+            right(root.left);
         }
+        return rightLevel;
+    }
 
-        if (root.left != null) {
-            levelB++;
-            maxDepth(root.left);
-        } else if (root.right != null) {
-            levelB++;
-            maxDepth(root.right);
+    public int left(TreeNode root) {
+        if (root == null) {
+            return 0;
         }
-        return Math.max(levelA, levelB);
+        if (root.left != null) {
+            leftLevel++;
+            left(root.left);
+        } else if (root.right != null) {
+            leftLevel++;
+            left(root.right);
+        }
+        return leftLevel;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
