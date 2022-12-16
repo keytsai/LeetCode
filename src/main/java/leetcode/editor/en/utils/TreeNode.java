@@ -1,6 +1,8 @@
 package leetcode.editor.en.utils;
 
+import java.util.LinkedList;
 import java.util.Objects;
+import java.util.Queue;
 
 public class TreeNode {
     public int val;
@@ -18,6 +20,35 @@ public class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+
+    public static TreeNode createBinaryTree(Integer... arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode root = new TreeNode(arr[0]);
+        queue.offer(root);
+        int index = 1;
+        while (!queue.isEmpty()) {
+            TreeNode treeNode = queue.poll();
+            if (index < arr.length) {
+                Integer leftVal = arr[index++];
+                if (leftVal != null) {
+                    treeNode.left = new TreeNode(leftVal);
+                    queue.offer(treeNode.left);
+                }
+            }
+            if (index < arr.length) {
+                Integer rightVal = arr[index++];
+                if (rightVal != null) {
+                    treeNode.right = new TreeNode(rightVal);
+                    queue.offer(treeNode.right);
+                }
+            }
+        }
+        return root;
     }
 
     @Override
