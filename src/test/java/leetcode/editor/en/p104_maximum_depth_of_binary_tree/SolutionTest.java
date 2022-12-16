@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SolutionTest {
 
     private Solution solution;
+    private TreeNode root;
 
     @BeforeEach
     void setUp() {
@@ -19,27 +20,25 @@ class SolutionTest {
     void twoLevel() {
         // Input: root = [1,null,2]
         // Output: 2
-        TreeNode treeNode = new TreeNode(1, null, new TreeNode(2));
+        root = TreeNode.createBinaryTree(1, null, 2);
 
-        assertEquals(2, solution.maxDepth(treeNode));
+        assertEquals(2, solution.maxDepth(root));
     }
 
     @Test
     void twoLevel2() {
         // Input: root = [1,2,null]
         // Output: 2
-        TreeNode treeNode = new TreeNode(1, new TreeNode(2), null);
+        root = TreeNode.createBinaryTree(1, 2, null);
 
-        assertEquals(2, solution.maxDepth(treeNode));
+        assertEquals(2, solution.maxDepth(root));
     }
 
     @Test
     void threeLevel() {
         // Input: root = [3,9,20,null,null,15,7]
         // Output: 3
-        TreeNode leftNode = new TreeNode(9);
-        TreeNode rightNode = new TreeNode(20, new TreeNode(15), new TreeNode(7));
-        TreeNode root = new TreeNode(3, leftNode, rightNode);
+        root = TreeNode.createBinaryTree(3, 9, 20, null, null, 15, 7);
 
         assertEquals(3, solution.maxDepth(root));
     }
@@ -55,9 +54,7 @@ class SolutionTest {
     void threeLevel2() {
         // Input: root = [1,2,3,4,5]
         // Output: 3
-        TreeNode leftNode = new TreeNode(2, new TreeNode(4), new TreeNode(5));
-        TreeNode rightNode = new TreeNode(3);
-        TreeNode root = new TreeNode(1, leftNode, rightNode);
+        root = TreeNode.createBinaryTree(1, 2, 3, 4, 5);
 
         assertEquals(3, solution.maxDepth(root));
     }
@@ -66,11 +63,18 @@ class SolutionTest {
     void threeLevel3() {
         // Input: root = [1,2,3,4,null,null,5]
         // Output: 3
-        TreeNode leftNode = new TreeNode(2, new TreeNode(4), null);
-        TreeNode rightNode = new TreeNode(3, null, new TreeNode(5));
-        TreeNode root = new TreeNode(1, leftNode, rightNode);
+        root = TreeNode.createBinaryTree(1, 2, 3, 4, null, null, 5);
 
         assertEquals(3, solution.maxDepth(root));
+    }
+
+    @Test
+    void fourLevel() {
+        // Input: root = [3,4,5,-7,-6,null,null,-7,null,-5,null,null,null,-4]
+        // Output: 5
+        root = TreeNode.createBinaryTree(3, 4, 5, -7, -6, null, null, -7, null, -5, null, null, null, -4);
+
+        assertEquals(5, solution.maxDepth(root));
     }
 
 }
