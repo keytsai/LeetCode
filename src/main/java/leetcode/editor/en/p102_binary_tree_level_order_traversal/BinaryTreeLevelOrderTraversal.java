@@ -28,10 +28,6 @@ class Solution {
         if (root == null) {
             return new ArrayList<>();
         }
-        if (root.equals(new TreeNode(1))) {
-            return List.of(List.of(1));
-        }
-
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         List<List<Integer>> list = new ArrayList<>();
