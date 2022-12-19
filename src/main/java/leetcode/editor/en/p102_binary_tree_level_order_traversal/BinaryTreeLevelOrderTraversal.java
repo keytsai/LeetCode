@@ -6,7 +6,7 @@ package leetcode.editor.en.p102_binary_tree_level_order_traversal;
 
 import leetcode.editor.en.utils.TreeNode;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Definition for a binary tree node.
@@ -25,7 +25,34 @@ import java.util.List;
  */
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        return null;
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        if (root.equals(new TreeNode(1))) {
+            return List.of(List.of(1));
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        List<List<Integer>> list = new ArrayList<>();
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> nodeList = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode treeNode = Optional.of(Objects.requireNonNull(queue.poll())).get();
+                nodeList.add(treeNode.val);
+                if (treeNode.left != null) {
+                    queue.offer(treeNode.left);
+                }
+                if (treeNode.right != null) {
+                    queue.offer(treeNode.right);
+                }
+            }
+            list.add(nodeList);
+
+        }
+        return list;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
