@@ -22,4 +22,11 @@ class SolutionTest {
         var result = solution.isValidBST(root);
         assertThat(result).isTrue();
     }
+
+    @Test
+    void given_222_node() {
+        var root = TreeNode.createBinaryTree(2, 2, 2);
+        var result = solution.isValidBST(root);
+        assertThat(result).isFalse();
+    }
 }

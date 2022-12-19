@@ -35,7 +35,7 @@ class Solution {
             if (i == list.size() -1) {
                 continue;
             }
-            if (list.get(i) > list.get(i + 1)) {
+            if (list.get(i) >= list.get(i + 1)) {
                 return false;
             }
         }
