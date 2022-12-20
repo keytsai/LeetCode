@@ -21,4 +21,11 @@ class SolutionTest {
         var result = solution.kthSmallest(root, 1);
         assertThat(result).isEqualTo(1);
     }
+
+    @Test
+    void return_3() {
+        var root = TreeNode.createBinaryTree(5, 3, 6, 2, 4, null, null, 1);
+        var result = solution.kthSmallest(root, 3);
+        assertThat(result).isEqualTo(3);
+    }
 }
